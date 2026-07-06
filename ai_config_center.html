@@ -108,7 +108,7 @@
         .model-card-meta-item{font-size:var(--font-size-xs);color:var(--text-muted)}
         .model-card-meta-item span{color:var(--text-secondary);font-weight:var(--font-weight-regular)}
         .search-bar{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
-        .search-input-wrap{position:relative;flex:1;max-width:320px;min-width:200px}
+        .search-input-wrap{position:relative;flex:1;max-width:400px;min-width:200px}
         .search-input-wrap svg{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--text-muted);width:16px;height:16px}
         .search-input-wrap input{width:100%;height:36px;padding:7px 12px 7px 32px;border:1px solid var(--border-input);border-radius:var(--radius-md);font-size:var(--font-size-sm);color:var(--text-heading);background:var(--bg-input);outline:none;font-family:var(--font-family)}
         .search-input-wrap input:focus{border-color:var(--color-primary);box-shadow:0 0 0 3px rgba(41,112,255,0.08)}
@@ -342,6 +342,10 @@
         </div>
         <nav class="nav-menu">
             <div class="nav-group-title">基础设置</div>
+            <a class="nav-item" id="nav-global" onclick="switchPage('global')">
+                <span class="nav-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg></span>
+                全局配置
+            </a>
             <a class="nav-item active" id="nav-prompt" onclick="switchPage('prompt')">
                 <span class="nav-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg></span>
                 提示词管理
@@ -361,10 +365,6 @@
             <a class="nav-item" id="nav-storage" onclick="switchPage('storage')">
                 <span class="nav-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/></svg></span>
                 存储策略配置
-            </a>
-            <a class="nav-item" id="nav-global" onclick="switchPage('global')">
-                <span class="nav-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg></span>
-                全局配置（待定）
             </a>
             <div class="nav-group-title">运行日志</div>
             <a class="nav-item" id="nav-log-review" onclick="switchPage('log-review')">
@@ -956,29 +956,64 @@
             </div>
         </div>
 
-        <!-- 全局配置（待定） -->
+        <!-- 全局配置 -->
         <div id="page-global" class="page-content hidden">
-            <div class="page-header"><h1 class="page-title">全局配置（待定）</h1></div>
+            <div class="page-header"><h1 class="page-title">全局配置</h1></div>
             <div class="page-body">
+                <!-- 文件服务配置 -->
                 <div class="section-card">
                     <div class="section-header">
-                        <div class="section-title"><svg class="section-title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>配置项（待决策）</div>
+                        <div class="section-title"><svg class="section-title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>文件服务配置</div>
                     </div>
-                    <div class="section-body">
-                        <div style="text-align:center;padding:60px 20px;">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--border-divider)" stroke-width="1.5"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
-                            <div style="margin-top:12px;font-size:var(--font-size-sm);color:var(--text-muted);">全局配置章节占位</div>
-                            <div style="margin-top:4px;font-size:var(--font-size-xs);color:var(--text-muted);">V2.0 不实现 UI，仅保留产品决策追踪</div>
-                            <div style="margin-top:20px;text-align:left;max-width:400px;margin-left:auto;margin-right:auto;">
-                                <div style="font-size:var(--font-size-xs);color:var(--text-label);margin-bottom:8px;font-weight:var(--font-weight-medium);">候选配置项：</div>
-                                <ul style="font-size:var(--font-size-xs);color:var(--text-muted);padding-left:16px;line-height:1.8;">
-                                    <li>智能审查结果展示配置</li>
-                                    <li>cvp 解析配置</li>
-                                    <li>其他全局策略（默认语种、输出格式等）</li>
-                                </ul>
+                    <div class="section-body" style="padding:20px 24px;">
+                        <!-- 选择文件预览方式 -->
+                        <div style="margin-bottom:16px;">
+                            <div style="font-size:var(--font-size-sm);font-weight:var(--font-weight-medium);color:var(--text-heading);margin-bottom:16px;">选择文件预览方式</div>
+                            <div style="display:flex;gap:32px;align-items:center;margin-bottom:8px;">
+                                <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:var(--font-size-sm);color:var(--text-secondary);">
+                                    <input type="radio" name="file-preview-mode" value="custom" checked onchange="toggleFilePreviewMode(this)" style="width:16px;height:16px;cursor:pointer;">
+                                    自研编辑器
+                                </label>
+                                <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:var(--font-size-sm);color:var(--text-secondary);">
+                                    <input type="radio" name="file-preview-mode" value="wps" onchange="toggleFilePreviewMode(this)" style="width:16px;height:16px;cursor:pointer;">
+                                    WPS文档中台
+                                </label>
+                            </div>
+                        </div>
+                        <!-- 自研编辑器提示 -->
+                        <div id="preview-hint-custom" style="font-size:var(--font-size-xs);color:var(--text-muted);line-height:1.8;margin-bottom:20px;">
+                            <div>系统已集成自研编辑器，无需额外购买。</div>
+                            <div>自研编辑器暂不支持部分产品功能，如无法满足您的需求，建议购买 WPS 等其他文件服务。</div>
+                        </div>
+                        <!-- WPS提示 -->
+                        <div id="preview-hint-wps" style="display:none;font-size:var(--font-size-xs);color:var(--text-muted);line-height:1.8;margin-bottom:20px;">
+                            <div>系统支持使用 WPS 文档中台服务，需购买 WPS 服务并完成下方配置后才能使用。</div>
+                        </div>
+                        <!-- WPS配置区域 -->
+                        <div id="wps-config-area" style="display:none;">
+                            <div style="border-top:1px solid var(--border-divider);padding-top:20px;">
+                                <div style="font-size:var(--font-size-sm);font-weight:var(--font-weight-medium);color:var(--text-heading);margin-bottom:16px;">WPS 文档中台配置</div>
+                                <div style="display:flex;flex-direction:column;gap:16px;">
+                                    <div style="display:flex;align-items:center;gap:16px;">
+                                        <div style="font-size:var(--font-size-sm);color:var(--text-heading);min-width:100px;font-weight:var(--font-weight-medium);">应用包名 <span style="color:var(--color-required);">*</span></div>
+                                        <input type="text" class="form-input" placeholder="请输入应用包名" style="height:36px;font-size:var(--font-size-sm);width:400px;">
+                                    </div>
+                                    <div style="display:flex;align-items:center;gap:16px;">
+                                        <div style="font-size:var(--font-size-sm);color:var(--text-heading);min-width:100px;font-weight:var(--font-weight-medium);">应用密钥 <span style="color:var(--color-required);">*</span></div>
+                                        <input type="password" class="form-input" placeholder="请输入应用密钥" style="height:36px;font-size:var(--font-size-sm);width:400px;">
+                                    </div>
+                                    <div style="display:flex;align-items:center;gap:16px;">
+                                        <div style="font-size:var(--font-size-sm);color:var(--text-heading);min-width:100px;font-weight:var(--font-weight-medium);">服务访问地址 <span style="color:var(--color-required);">*</span></div>
+                                        <input type="text" class="form-input" placeholder="请输入服务访问地址" style="height:36px;font-size:var(--font-size-sm);width:400px;">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
+                <!-- 保存按钮 -->
+                <div style="display:flex;justify-content:flex-end;margin-top:20px;">
+                    <button class="btn btn-primary" onclick="saveGlobalConfig()">保存配置</button>
                 </div>
             </div>
         </div>
@@ -1455,6 +1490,21 @@ function toggleModelStatus(id) {
         renderModelTable();
         showToast(model.enabled ? '模型已启用' : '模型已禁用', 'success');
     }
+}
+
+// 全局配置 - 文件预览方式切换
+function toggleFilePreviewMode(radio) {
+    var isWps = radio.value === 'wps';
+    document.getElementById('preview-hint-custom').style.display = isWps ? 'none' : 'block';
+    document.getElementById('preview-hint-wps').style.display = isWps ? 'block' : 'none';
+    document.getElementById('wps-config-area').style.display = isWps ? 'block' : 'none';
+}
+
+// 全局配置 - 保存
+function saveGlobalConfig() {
+    var mode = document.querySelector('input[name="file-preview-mode"]:checked');
+    var modeName = mode.value === 'wps' ? 'WPS文档中台' : '自研编辑器';
+    showToast('全局配置已保存（文件预览方式：' + modeName + '）', 'success');
 }
 
 function runPromptTest() {
